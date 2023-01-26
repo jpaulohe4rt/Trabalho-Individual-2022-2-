@@ -1,16 +1,24 @@
 version: "3.8"
 services:
+  app:
+    build: .
+    command: python src/main.py
+    volumes:
+      - .:/app
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
   mongodb:
     image: mongo
     container_name: mongodb
     environment:
       - MONGO_INITDB_ROOT_USERNAME=lappis
       - MONGO_INITDB_ROOT_PASSWORD=lappis
-    volumes:
-      - mongodb_data:/data/db
     ports:
       - "27017:27017"
     restart: unless-stopped
-
+    volumes:
+      - mongodb_data:/data/db
 volumes:
   mongodb_data:
