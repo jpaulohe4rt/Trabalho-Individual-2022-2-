@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-        run: make install-dependencies
+      run: make install-dependencies
 
     - name: Build Images
       run: make build
@@ -27,5 +27,12 @@ jobs:
     - name: Build docs
       run: make docs
 
-    - name: Run publish
-      run: make publish
+    - name: Run poetry
+      env:
+        PYPI_TOKEN: ${{ secrets._PYPITOKEN_}}
+      run: |
+        pip install poetry
+        poetry lock
+        poetry build
+        poetry version $(poetry version | awk '{print $2}') --patch
+        poetry publish --username jpaulohe4rt --password ${{ env.PYPI_TOKEN }}
