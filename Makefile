@@ -15,3 +15,15 @@ stop:
 
 restart:
 	docker-compose restart
+
+install-dependencies:
+	python3 -m venv .env
+	. .env/bin/activate
+	pip3 install -r requirements.txt
+	pip3 install sphinx
+	pip3 install sphinx-rtd-theme
+
+docs:
+	sphinx-apidoc -o docs .
+	cd /docs
+	make html

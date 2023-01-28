@@ -14,13 +14,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+
     - name: Install Dependencies
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-        run: |
-          python -m venv .env
-          source .env/bin/activate
-          pip install -r requirements.txt
+        run: make install-dependencies
+
     - name: Build Images
       run: make build
+    
+    -name: Build docs
+      run: make docs
