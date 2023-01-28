@@ -29,4 +29,4 @@ docs:
 	make html
 
 test:
-	pytest --cov
+	docker-compose run app pytest
