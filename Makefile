@@ -27,3 +27,6 @@ docs:
 	sphinx-apidoc -o docs .
 	cd /docs
 	make html
+
+test:
+	pytest --cov

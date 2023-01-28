@@ -26,3 +26,6 @@ jobs:
     
     -name: Build docs
       run: make docs
+
+    -name: Run test
+      run: make test
