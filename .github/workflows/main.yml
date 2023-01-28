@@ -31,4 +31,4 @@ jobs:
       uses: "pypa/gh-action-pypi-publish@release/v1"
       with:
         user: "__token__"
-        password: "${{ secrets.POETRY_HTTP_BASIC_PASSWORD }}"
+        password: "${{ secrets.PYPI_API_TOKEN }}"
