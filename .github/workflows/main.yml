@@ -29,7 +29,7 @@ jobs:
 
     - name: Run poetry
       env:
-        PYPI_TOKEN: ${{ secrets._PYPITOKEN_}}
+        PYPI_TOKEN: ${{ secrets.PWD}}
       run: |
         pip install poetry
         poetry lock
