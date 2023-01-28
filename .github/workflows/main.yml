@@ -28,7 +28,7 @@ jobs:
       run: make docs
 
     - name: Run publish
-      run: |
-        pip install poetry
-        poetry config http-basic.my-pypi ${{ secrets.POETRY_HTTP_BASIC_USERNAME }} ${{ secrets.POETRY_HTTP_BASIC_PASSWORD }}
-        poetry run poetry publish
+      uses: "pypa/gh-action-pypi-publish@release/v1"
+      with:
+        user: "__token__"
+        password: "${{ secrets.POETRY_HTTP_BASIC_PASSWORD }}"
