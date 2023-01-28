@@ -1,14 +1,5 @@
 version: "3.8"
 services:
-  app:
-    build: .
-    command: python src/main.py
-    volumes:
-      - .:/app
-    depends_on:
-      - mongodb
-    ports:
-      - "3000:3000"
   mongodb:
     image: mongo
     container_name: mongodb
@@ -20,5 +11,27 @@ services:
     restart: unless-stopped
     volumes:
       - mongodb_data:/data/db
+  mongo-import:
+    container_name: mongo-import
+    image: mongo
+    command: mongoimport --authenticationDatabase=admin -u lappis -p lappis --host mongodb --db database --collection collection --type=csv --headerline --file=data/data/data_example.csv
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/data/
+  metabase:
+    container_name: metabase
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+  app:
+    build: .
+    container_name: trabalho-gces-jpaulohe4rt
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGO_URL=mongodb://lappis:lappis@mongodb:27017/mydb
+    depends_on:
+      - mongodb
 volumes:
   mongodb_data:
