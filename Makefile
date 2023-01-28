@@ -22,7 +22,7 @@ install-dependencies:
 	pip3 install -r requirements.txt
 	pip3 install sphinx
 	pip3 install sphinx-rtd-theme
-	pip3 install poetry
+	pip install poetry
 
 docs:
 	sphinx-apidoc -o docs .
