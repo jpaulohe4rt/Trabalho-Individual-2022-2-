@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-      run: make install-dependencies
+        run: make install-dependencies
 
     - name: Build Images
       run: make build
