@@ -1,5 +1,5 @@
 build:
-	docker-compose build
+	docker-compose build -t trabalhogces
 
 up:
 	docker-compose up -d
