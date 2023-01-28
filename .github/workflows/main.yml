@@ -31,4 +31,5 @@ jobs:
       run: |
         pip install poetry
         poetry build
-        poetry publish --username=jpaulohe4rt --password=${{ secrets.PWD }}
+        poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
+        poetry publish 
