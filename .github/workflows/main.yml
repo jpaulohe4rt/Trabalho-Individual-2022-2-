@@ -24,8 +24,8 @@ jobs:
     - name: Build Images
       run: make build
     
-    -name: Build docs
+    - name: Build docs
       run: make docs
 
-    -name: Run test
+    - name: Run test
       run: make test
