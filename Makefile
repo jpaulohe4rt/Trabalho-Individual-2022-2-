@@ -35,5 +35,5 @@ test:
 publish:
 	poetry lock
 	poetry build
-	poetry version $(poetry version | awk '{print $2}') --patch
+	poetry version $(poetry version | awk '{print $2}') --patch 
 	poetry publish --username jpaulohe4rt --password ${{ secrets._PYPITOKEN_ }}

@@ -31,6 +31,5 @@ jobs:
       run: |
         pip install poetry
         poetry lock
-        poetry build
-        poetry version minor
+        poetry version minor --build
         poetry publish --username=jpaulohe4rt --password=${{ secrets.PWD }}
