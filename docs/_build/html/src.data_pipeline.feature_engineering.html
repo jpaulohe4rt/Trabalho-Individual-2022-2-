@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>src.data_pipeline.feature_engineering package &mdash; Trabalho-GCES-2022.2 0.2.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Trabalho-GCES-2022.2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">src.data_pipeline.feature_engineering package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-src.data_pipeline.feature_engineering.key_smash">src.data_pipeline.feature_engineering.key_smash module</a><ul>
+<li><a class="reference internal" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash"><code class="docutils literal notranslate"><span class="pre">KeySmash</span></code></a><ul>
+<li><a class="reference internal" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_char_frequency_metric"><code class="docutils literal notranslate"><span class="pre">KeySmash.calculate_char_frequency_metric()</span></code></a></li>
+<li><a class="reference internal" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_irregular_sequence_metric"><code class="docutils literal notranslate"><span class="pre">KeySmash.calculate_irregular_sequence_metric()</span></code></a></li>
+<li><a class="reference internal" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_number_count_metric"><code class="docutils literal notranslate"><span class="pre">KeySmash.calculate_number_count_metric()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#src-data-pipeline-feature-engineering-word-embedding-module">src.data_pipeline.feature_engineering.word_embedding module</a></li>
+<li><a class="reference internal" href="#module-src.data_pipeline.feature_engineering">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Trabalho-GCES-2022.2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">src.data_pipeline.feature_engineering package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/src.data_pipeline.feature_engineering.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="src-data-pipeline-feature-engineering-package">
+<h1>src.data_pipeline.feature_engineering package<a class="headerlink" href="#src-data-pipeline-feature-engineering-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-src.data_pipeline.feature_engineering.key_smash">
+<span id="src-data-pipeline-feature-engineering-key-smash-module"></span><h2>src.data_pipeline.feature_engineering.key_smash module<a class="headerlink" href="#module-src.data_pipeline.feature_engineering.key_smash" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.data_pipeline.feature_engineering.key_smash.KeySmash">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.data_pipeline.feature_engineering.key_smash.</span></span><span class="sig-name descname"><span class="pre">KeySmash</span></span><a class="reference internal" href="_modules/src/data_pipeline/feature_engineering/key_smash.html#KeySmash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for calculating metrics to indicate key smashing behavior in a text.</p>
+<p>Key smashing is the act of typing on a keyboard in a rapid and uncontrolled manner,
+often resulting in a series of random characters being entered into a document or text field.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_char_frequency_metric">
+<span class="sig-name descname"><span class="pre">calculate_char_frequency_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/data_pipeline/feature_engineering/key_smash.html#KeySmash.calculate_char_frequency_metric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_char_frequency_metric" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Char Frequency Metric.</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>text<span class="classifier">str</span></dt><dd><p>The text to use for the calculation.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>Char Frequency Metric.</p>
+</dd>
+</dl>
+</section>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_char_frequency_metric</span><span class="p">(</span><span class="s2">&quot;PUENTECILLA KM. 1.7&quot;</span><span class="p">)</span>
+<span class="go">1.121212121212121</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_char_frequency_metric</span><span class="p">(</span><span class="s2">&quot;ASDASD XXXX&quot;</span><span class="p">)</span>
+<span class="go">3.0</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_irregular_sequence_metric">
+<span class="sig-name descname"><span class="pre">calculate_irregular_sequence_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/data_pipeline/feature_engineering/key_smash.html#KeySmash.calculate_irregular_sequence_metric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_irregular_sequence_metric" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Irregular Sequence Metric.</p>
+<section id="id1">
+<h3>Parameters<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>text<span class="classifier">str</span></dt><dd><p>The text to use for the calculation.</p>
+</dd>
+<dt>opt<span class="classifier">str</span></dt><dd><p>The type of characters to consider for the calculation,
+can be one of ‘vowels’, ‘consonants’, or ‘special_characters’.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>Returns<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>Irregular Sequence Metric.</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h3>Examples<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_irregular_sequence_metric</span><span class="p">(</span><span class="s2">&quot;PUENTECILLA KM. 1.7&quot;</span><span class="p">,</span> <span class="s2">&quot;vowels&quot;</span><span class="p">)</span>
+<span class="go">0.21052631578947367</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_irregular_sequence_metric</span><span class="p">(</span><span class="s2">&quot;ASDASD XXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;consonants&quot;</span><span class="p">)</span>
+<span class="go">2.1818181818181817</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_irregular_sequence_metric</span><span class="p">(</span><span class="s2">&quot;!@#$% ASDFGHJKL&quot;</span><span class="p">,</span> <span class="s2">&quot;special_characters&quot;</span><span class="p">)</span>
+<span class="go">1.5625</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_number_count_metric">
+<span class="sig-name descname"><span class="pre">calculate_number_count_metric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/data_pipeline/feature_engineering/key_smash.html#KeySmash.calculate_number_count_metric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.data_pipeline.feature_engineering.key_smash.KeySmash.calculate_number_count_metric" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Number Count Metric.</p>
+<section id="id4">
+<h3>Parameters<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>text<span class="classifier">str</span></dt><dd><p>The text field to use for the calculation.</p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h3>Returns<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>Number Count Metric.</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Examples<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_number_count_metric</span><span class="p">(</span><span class="s2">&quot;ABC 123 !@#&quot;</span><span class="p">)</span>
+<span class="go">0.0 </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">calculate_number_count_metric</span><span class="p">(</span><span class="s2">&quot;ABC123 !@#&quot;</span><span class="p">)</span>
+<span class="go">0.9</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="src-data-pipeline-feature-engineering-word-embedding-module">
+<h2>src.data_pipeline.feature_engineering.word_embedding module<a class="headerlink" href="#src-data-pipeline-feature-engineering-word-embedding-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-src.data_pipeline.feature_engineering">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.data_pipeline.feature_engineering" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, João Paulo Lima da Silva.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
