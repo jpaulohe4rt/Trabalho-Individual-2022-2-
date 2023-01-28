@@ -12,15 +12,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install Dependencies
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Install Dependencies
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
         run: |
           python -m venv .env
           source .env/bin/activate
           pip install -r requirements.txt
-      - name: Build Images
-        run: docker-compose build app
+    - name: Build Images
+      run: docker-compose build app
