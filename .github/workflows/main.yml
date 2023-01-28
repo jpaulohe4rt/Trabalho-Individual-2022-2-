@@ -27,12 +27,10 @@ jobs:
     - name: Build docs
       run: make docs
 
-    - name: Run poetry
-      env:
-        PYPI_TOKEN: ${{ secrets.PWD}}
+    - name: Run publish
       run: |
         pip install poetry
         poetry lock
         poetry build
         poetry version $(poetry version | awk '{print $2}')
-        poetry publish --username jpaulohe4rt --password ${{ env.PYPI_TOKEN }}
+        poetry publish --username jpaulohe4rt --password ${{ secrets.PWD }}
