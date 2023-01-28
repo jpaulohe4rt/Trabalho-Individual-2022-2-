@@ -22,6 +22,7 @@ install-dependencies:
 	pip3 install -r requirements.txt
 	pip3 install sphinx
 	pip3 install sphinx-rtd-theme
+	pip3 install poetry
 
 docs:
 	sphinx-apidoc -o docs .
@@ -29,4 +30,10 @@ docs:
 	make html
 
 test:
-	docker-compose run app pytest
+	coverage run -m pytest
+
+publish:
+	poetry lock
+	poetry build
+	poetry version $(poetry version | awk '{print $2}') --patch
+	poetry publish --username jpaulohe4rt --password ${{ secrets._PYPITOKEN_ }}
