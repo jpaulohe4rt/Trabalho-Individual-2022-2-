@@ -32,6 +32,5 @@ jobs:
         pip install poetry
         poetry lock
         poetry build
-        poetry version $(poetry version | awk '{print $2}')
-        poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
-        poetry publish
+        poetry version minor
+        poetry publish --username=jpaulohe4rt --password=${{ secrets.PWD }}
