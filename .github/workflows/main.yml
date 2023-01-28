@@ -30,6 +30,5 @@ jobs:
     - name: Run publish
       run: |
         pip install poetry
-        poetry build
-        poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
-        poetry publish 
+        poetry config http-basic.my-pypi ${{ secrets.POETRY_HTTP_BASIC_USERNAME }} ${{ secrets.POETRY_HTTP_BASIC_PASSWORD }}
+        poetry run poetry publish
