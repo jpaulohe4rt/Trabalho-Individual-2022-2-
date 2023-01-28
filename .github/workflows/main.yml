@@ -33,4 +33,4 @@ jobs:
         poetry lock
         poetry build
         poetry version $(poetry version | awk '{print $2}')
-        poetry publish --username jpaulohe4rt --password ${{ secrets.PWD }}
+        poetry publish --username=jpaulohe4rt --password=${{ secrets.PWD }}
