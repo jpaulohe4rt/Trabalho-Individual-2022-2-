@@ -27,8 +27,11 @@ jobs:
     - name: Build docs
       run: make docs
 
-    - name: Run publish
-      uses: "pypa/gh-action-pypi-publish@release/v1"
-      with:
-        user: "jpaulohe4rt"
-        password: "${{ secrets.PYPI_API_TOKEN }}"
+    - name: Build authentication
+      run: poetry config http-basic.pypi jpaulohe4rt ${{secrets.PWD}}
+
+    - name: Build Poetry
+      run: poetry build
+
+    - name: Build Poetry
+      run: poetry publish
