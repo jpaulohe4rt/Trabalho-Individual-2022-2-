@@ -22,8 +22,6 @@ install-dependencies:
 	pip install -r requirements.txt
 	pip install sphinx
 	pip install sphinx-rtd-theme
-	pip install poetry
-	pip install cachecontrol
 
 docs:
 	sphinx-apidoc -o docs .
