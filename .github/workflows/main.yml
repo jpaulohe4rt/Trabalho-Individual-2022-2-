@@ -27,6 +27,9 @@ jobs:
     - name: Build docs
       run: make docs
 
+    - name: Install poetry
+      run: pip install poetry
+
     - name: Build authentication
       run: poetry config http-basic.pypi jpaulohe4rt ${{secrets.PWD}}
 
