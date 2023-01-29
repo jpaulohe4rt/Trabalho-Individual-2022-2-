@@ -19,11 +19,11 @@ restart:
 install-dependencies:
 	python3 -m venv .env
 	. .env/bin/activate
-	pip3 install -r requirements.txt
-	pip3 install sphinx
-	pip3 install sphinx-rtd-theme
-	pip3 install poetry
-	pip3 install cachecontrol
+	pip install -r requirements.txt
+	pip install sphinx
+	pip install sphinx-rtd-theme
+	pip install poetry
+	pip install cachecontrol
 
 docs:
 	sphinx-apidoc -o docs .
