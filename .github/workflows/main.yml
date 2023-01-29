@@ -31,10 +31,9 @@ jobs:
       run: make docs
 
     - name: Configure authentication
-      run: poetry config http-basic.pypi jpaulohe4rt ${{secrets.PWD}}
+      run: poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
 
     - name: Publish package
       run: |
         poetry build
-        poetry version minor
         poetry publish
