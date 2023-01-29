@@ -25,10 +25,10 @@ jobs:
         make install-dependencies
 
     - name: Documentation
-      run: make docs 
+      run: make docs
 
     - name: Configure authentication
-      run: poetry config http-basic.pypi jpaulohe4rt ${{secrets.PWD}}
+      run: poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
 
     - name: Publish package
       run: |
