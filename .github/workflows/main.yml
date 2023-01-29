@@ -19,9 +19,6 @@ jobs:
         python-version: '3.8'
     - name: Dependencies
       run: |
-        pip install poetry
-        pip install cachecontrol
-        pip install -U sphinx
         make install-dependencies
 
     - name: Docker
@@ -31,7 +28,7 @@ jobs:
       run: make docs
 
     - name: Configure authentication
-      run: poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
+      run: poetry config http-basic.pypi jpaulohe4rt @Jpaulo22#
 
     - name: Publish package
       run: |

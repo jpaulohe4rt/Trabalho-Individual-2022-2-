@@ -20,14 +20,12 @@ install-dependencies:
 	python3 -m venv .env
 	. .env/bin/activate
 	pip install -r requirements.txt
-	pip install sphinx
+	pip install -U sphinx
 	pip install sphinx-rtd-theme
+	pip install cachecontrol
+	pip install poetry
 
 docs:
 	sphinx-apidoc -o docs .
 	cd /docs
 	make html
-
-test:
-	coverage run -m pytest
-
