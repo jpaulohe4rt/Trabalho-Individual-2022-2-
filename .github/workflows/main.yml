@@ -12,29 +12,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-
-    - name: Install Dependencies
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
+    - name: Set Up Python
+      uses: actions/setup-python@v3
       with:
-        python-version: 3.8
-        run: make install-dependencies
+        python-version: '3.8'
+    - name: Dependencies
+      run: |
+        pip install poetry
+        pip install cachecontrol
+        pip install -U sphinx
+        make install-dependencies
 
-    - name: Build Images
-      run: make build
-    
-    - name: Build docs
-      run: make docs
+    - name: Documentation
+      run: make docs 
 
-    - name: Install poetry
-      run: pip install poetry
-
-    - name: Build authentication
+    - name: Configure authentication
       run: poetry config http-basic.pypi jpaulohe4rt ${{secrets.PWD}}
 
-    - name: Build Poetry
-      run: poetry build
-
-    - name: Build Poetry
-      run: poetry publish
+    - name: Publish package
+      run: |
+        poetry build
+        poetry version minor
+        poetry publish
