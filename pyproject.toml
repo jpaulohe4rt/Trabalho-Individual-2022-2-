@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "trabalho-gces-jpaulohe4rt"
-version = "0.2.1"
+version = "0.2.3"
 description = "Trabalho Individual de GCES"
 authors = ["João Paulo Lima <jpaulo.on@gmail.com>"]
 readme = "README.md"
