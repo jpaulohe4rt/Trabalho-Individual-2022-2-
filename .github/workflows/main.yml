@@ -28,7 +28,7 @@ jobs:
       run: make docs 
 
     - name: Configure authentication
-      run: poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
+      run: poetry config http-basic.pypi jpaulohe4rt ${{ vars.PWD }}
 
     - name: Publish package
       run: |
