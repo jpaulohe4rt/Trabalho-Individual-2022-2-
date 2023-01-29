@@ -24,11 +24,14 @@ jobs:
         pip install -U sphinx
         make install-dependencies
 
+    - name: Docker
+      run: make build        
+
     - name: Documentation
       run: make docs
 
     - name: Configure authentication
-      run: poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
+      run: poetry config http-basic.pypi jpaulohe4rt ${{secrets.PWD}}
 
     - name: Publish package
       run: |
