@@ -26,10 +26,19 @@ jobs:
 
     - name: Documentation
       run: make docs
+    
+    - name: Lint code
+      run: pylint src
+      continue-on-error: true
+
+    - name: Run tests
+      run: |
+        pytest tests
+        pytest --cov
+      continue-on-error: true
 
     - name: Configure authentication
-      run: poetry config http-basic.pypi jpaulohe4rt @Jpaulo22#
-
+      run: poetry config http-basic.pypi jpaulohe4rt ${{ secrets.PWD }}
     - name: Publish package
       run: |
         poetry build

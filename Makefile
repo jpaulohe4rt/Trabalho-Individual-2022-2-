@@ -24,6 +24,8 @@ install-dependencies:
 	pip install sphinx-rtd-theme
 	pip install cachecontrol
 	pip install poetry
+	pip install pylint
+	pip install pytest
 
 docs:
 	sphinx-apidoc -o docs .
